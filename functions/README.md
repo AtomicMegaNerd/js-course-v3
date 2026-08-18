@@ -16,6 +16,10 @@ console.log(sum); // 5
 console.log(add(10, 7)); // 17
 ```
 
+If you leave out an argument to a function it will be set to `undefined`.
+
+Calling `typeof` on a function returns the string "function".
+
 ---
 
 ## Passing Functions as Arguments
@@ -37,3 +41,51 @@ function handleSum(sum) {
 
 sumCallback(1, 2, handleSum); // Prints: 3
 ```
+
+---
+
+## Arrow Functions
+
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/functions/arrow-functions)
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+
+const sumArrow = (a, b) => {
+  return a + b;
+};
+```
+
+### Differences
+
+#### Single Parameter Shortcut
+
+When you have _one_ parameter you can omit the parentheses:
+
+```js
+// With parentheses
+const printName = (name) => {
+  console.log(name);
+};
+
+// Without parentheses
+const printNameShort = (name) => {
+  console.log(name);
+};
+```
+
+#### Shorter Syntax for Simpler Functions
+
+```js
+// Short arrow function (implicit return)
+const sumShort = (a, b) => a + b;
+```
+
+### When To Use Arrow Functions
+
+1. Short, simple functions
+2. Callback functions
+3. Anonymous functions
+4. Functions that fit on one line
