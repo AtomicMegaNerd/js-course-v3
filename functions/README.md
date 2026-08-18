@@ -83,6 +83,8 @@ const printNameShort = (name) => {
 const sumShort = (a, b) => a + b;
 ```
 
+Do not add the `return` keyword to functions that use this syntax.
+
 ### When To Use Arrow Functions
 
 1. Short, simple functions
