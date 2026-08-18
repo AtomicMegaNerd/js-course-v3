@@ -1,5 +1,7 @@
 # Getting Started
 
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/running-javascript/loading-javascript-in-browser)
+
 ## Browser Loading Order
 
 The browser does these in order:
@@ -31,6 +33,7 @@ older approach.
 - Stops parsing once JS download is complete.
 - Executes JS immediately.
 - Resumes HTML parsing.
+- May execute in any order (whichever is downloaded first).
 
 ### Defer Loading
 
@@ -40,3 +43,4 @@ older approach.
 
 - Runs JS after all HTML parsing is complete.
 - _Recommended_ for most scripts.
+- Runs them in a predictable order (in order that they are declared).

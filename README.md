@@ -1,11 +1,8 @@
 # Getting Started with Javascript v3
 
-This is a course from Masters.dev
+This is a course from Masters.dev.
+
 [Course site](https://master.dev/courses/getting-started-javascript-v3).
-
-## Course Notes
-
-[Course Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/running-javascript/loading-javascript-in-browser)
 
 ## Running Live server
 
