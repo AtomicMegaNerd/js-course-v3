@@ -12,6 +12,8 @@ The 3 built-in primitive types are `Number`, `String`, and `Boolean`.
 
 ### Determining Types
 
+The `typeof` operator returns a string representing the name of the type.
+
 ```js
 typeof 42; // "number"
 typeof "Hello"; // "string"
