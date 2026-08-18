@@ -15,7 +15,7 @@ pre-commit = "latest"
 "cargo:live-server" = "latest"
 
 [env]
-CURR_PROJECT = "./projects/word-masters/"
+CURR_PROJECT = "./first-js-code/"
 
 [tools.rust]
 version = "stable"
