@@ -59,6 +59,8 @@ if (true) {
 
 ## Hoisting
 
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/scope/hoisting)
+
 This does not work.
 
 ```js
@@ -120,7 +122,18 @@ function cleanup() {
 [Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/scope/closures)
 
 What makes closures confusing is they access the _current value_ of variables, not the value they
-had when the closure was created.
+had when the closure was created. so:
+
+```js
+let a = 1;
+
+function print() {
+  console.log(a);
+}
+
+a = 2; // Change the value before calling the function
+print(); // Prints: 2 (not 1!)
+```
 
 Closures are often used to define functions inside of functions.
 
