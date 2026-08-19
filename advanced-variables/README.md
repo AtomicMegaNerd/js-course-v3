@@ -151,3 +151,119 @@ console.log(null === undefined); // false (different types)
 
 When checking if a variable has a value, you often want to catch both null and undefined which is
 why `==` is useful here.
+
+## Arrays
+
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/advanced-variables/arrays)
+
+Use `push()` method to add elements:
+
+```js
+const numbers = [1, 2, 3];
+console.log(numbers); // [1, 2, 3]
+
+numbers.push(4);
+console.log(numbers); // [1, 2, 3, 4]
+
+numbers.push(5);
+console.log(numbers); // [1, 2, 3, 4, 5]
+```
+
+We can mix data types in Arrays no problem. Not always the best idea however.
+
+### Nesting
+
+```js
+const grid = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+// Get the first row
+console.log(grid[0]); // [1, 2, 3]
+
+// Get the middle element (5)
+console.log(grid[1][1]); // 5
+
+// Get the bottom-right element (9)
+console.log(grid[2][2]); // 9
+```
+
+### Length
+
+Use the `length` property (not method).
+
+### Exercise
+
+Create an array with the first 5 letters of the alphabet, then print out the middle element (which
+should be "C").
+
+```js
+const letters = ["A", "B", "C", "D", "E"];
+console.log(letters[2]);
+```
+
+## Object
+
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/advanced-variables/objects)
+
+```js
+const person = {
+  name: "Kyle",
+  age: 30,
+  favoriteNumber: 3,
+  sayHi() {
+    console.log("Hi");
+  },
+  sayGoodbye() {
+    console.log("Goodbye");
+  },
+};
+
+console.log(person.name); // "Kyle"
+console.log(person.age); // 30
+console.log(person.favoriteNumber); // 3
+
+person.sayHi(); // "Hi"
+person.sayGoodbye(); // "Goodbye"
+```
+
+### Bracket Notation
+
+Useful when the name of the property we want to access is stored in a variable:
+
+```js
+const car = {
+  make: "Nissan",
+  model: "370Z",
+};
+
+console.log(car["make"]); // "Nissan"
+console.log(car.make); // "Nissan" (preferred)
+
+// The only time you need to use bracket notation is when the property name is stored in a
+// variable:
+const property = "make";
+console.log(car[property]); // "Nissan"
+```
+
+### Exercise
+
+```js
+const book = {
+  title: "A Manifesto on the Utility of the Fountain Pen",
+  author: {
+    firstName: "Chris",
+    lastName: "Dunphy",
+  },
+  yearPublished: 2026,
+  publish() {
+    console.log("Publishing your book");
+  },
+};
+```
+
+## Reference vs. Value
+
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/advanced-variables/reference-vs-value)
