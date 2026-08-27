@@ -110,3 +110,27 @@ for (const key in person) {
 ### Exercise
 
 See [for.js](./for.js)
+
+## `while` loops
+
+[Lesson Plan](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/control-flow/while-loops)
+
+### `do...while`
+
+Javascript has both `while` and `do...while`:
+
+```js
+let userInput;
+do {
+  userInput = prompt("Enter 'yes' to continue:");
+  console.log(`You entered: ${userInput}`);
+} while (userInput !== "yes");
+```
+
+## Recursion
+
+[Lesson Plan](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/control-flow/recursion)
+
+### Exercise
+
+[recursion.js](./recursion.js)
