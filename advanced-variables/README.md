@@ -316,6 +316,8 @@ person.greet(); // "Hello, my name is Alice"js
 Classes are a newer addition to the language that is another way to define objects. Classes can have
 instances, and `this` refers to the instance of the class.
 
+**NOTE** In JS it is convention to start names of classes with upper-case letter.
+
 ```js
 class Person {
   constructor(name, age) {
@@ -332,7 +334,7 @@ const alice = new Person("Alice", 25);
 alice.greet(); // "Hello, my name is Alice"
 ```
 
-Some JS libraries use `new`:
+Some JS std library code uses classes with `new`:
 
 ```js
 // Creating a Date object
