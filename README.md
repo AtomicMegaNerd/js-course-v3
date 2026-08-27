@@ -4,6 +4,12 @@ This is a course from Masters.dev.
 
 [Course site](https://master.dev/courses/getting-started-javascript-v3).
 
+## Eearlier Web Dev Course
+
+There is some overlap with
+[https://github.com/AtomicMegaNerd/web-dev-intro](https://github.com/AtomicMegaNerd/web-dev-intro).
+However there are also some new concepts covered here that were not covered in the earlier course.
+
 ## Running Live server
 
 In `mise.toml` set the `CURR_PROJECT` environment variable to the root of the current project in
