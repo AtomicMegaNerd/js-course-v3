@@ -267,3 +267,106 @@ const book = {
 ## Reference vs. Value
 
 [Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/advanced-variables/reference-vs-value)
+
+- Arrays and object are passed/copied by reference.
+- Strings and numbers are are passed/copied by value.
+
+Comparing two different reference objects with the same contents is false (with `==` or `===`). They
+return true if they are references to the same object.
+
+### `const` on reference types
+
+`const` does not prevent you from modifying the contents of an array or object.
+
+```js
+const arr = [1, 2];
+
+// This works! We're not changing the reference
+arr.push(3);
+console.log(arr); // [1, 2, 3]
+```
+
+## Template Strings
+
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/advanced-variables/string-template-literals)
+
+## The `this`/`new` Keywords
+
+[Lesson Notes](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/advanced-variables/this-keyword)
+
+`this` refers to the object that the user is in. In the browser, at file global scope `this` will be
+the `window` object. In Node at the same file global scope `this` will be the `global` object.
+
+Inside objects `this` refers to the object itself:
+
+```js
+const person = {
+  name: "Alice",
+  age: 25,
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+person.greet(); // "Hello, my name is Alice"js
+```
+
+### Classes
+
+Classes are a newer addition to the language that is another way to define objects. Classes can have
+instances, and `this` refers to the instance of the class.
+
+```js
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+const alice = new Person("Alice", 25);
+alice.greet(); // "Hello, my name is Alice"
+```
+
+Some JS libraries use `new`:
+
+```js
+// Creating a Date object
+const now = new Date();
+console.log(now); // Current date and time
+
+// Date uses `this` internally
+console.log(now.getMonth());
+console.log(now.getDay());
+console.log(now.getDate());
+```
+
+### Prototypes
+
+Using prototypes:
+
+```js
+const personPrototype = {
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+function createPerson(name, age) {
+  const person = Object.create(personPrototype);
+
+  person.name = name;
+  person.age = age;
+
+  return person;
+}
+
+const alice = createPerson("Alice", 25);
+alice.greet();
+```
+
+[Object.create MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
