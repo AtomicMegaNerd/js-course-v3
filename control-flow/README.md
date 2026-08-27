@@ -165,6 +165,7 @@ const debug = config.debug ?? true; // true (✅)
 ### Optional Chaining `?.`
 
 - Optional chaining will only access properties if the value before it is not `null` or `undefined`.
+- Returns `undefined` if any of the properties (or methods) in the chain do not exist.
 
 ```js
 const user = {
@@ -183,4 +184,123 @@ const theme2 = user?.profile?.settings?.theme;
 
 // Works with methods too
 user?.notify?.();
+```
+
+## Array Methods
+
+[Lesson Plan](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/control-flow/array-methods)
+
+### `forEach`
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((number) => {
+  console.log(number);
+});
+```
+
+### `forEach` with Index
+
+```js
+const names = ["Kyle", "Sarah", "John"];
+
+names.forEach((name, index) => {
+  console.log(`${name} ${index}`);
+});
+```
+
+### `map`
+
+- Returns new array with the result of the function applied to each element
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map((number) => {
+  return number * 2;
+});
+
+console.log(doubled); // [2, 4, 6, 8, 10]
+console.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)
+```
+
+### `filter`
+
+- Returns all matching elements matching the predicate
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const smallNumbers = numbers.filter((number) => {
+  return number <= 2;
+});
+
+console.log(smallNumbers); // [1, 2]
+console.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)
+```
+
+### `find`
+
+- Returns the first element matching the predicate
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const firstBigNumber = numbers.find((number) => {
+  return number > 2;
+});
+
+console.log(firstBigNumber); // 3 (not an array, just the number)
+```
+
+### `some`
+
+- Returns true if at least one element matches the predicate
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const hasLargeNumber = numbers.some((number) => {
+  return number > 3;
+});
+console.log(hasLargeNumber); // true (because 4 and 5 are > 3)
+
+const hasNegativeNumber = numbers.some((number) => {
+  return number < 0;
+});
+console.log(hasNegativeNumber); // false (no numbers are < 0)
+```
+
+### `every`
+
+- Returns true if all elements match the predicate
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const allPositive = numbers.every((number) => {
+  return number > 0;
+});
+console.log(allPositive); // true (all numbers are greater than 0)
+
+const allLarge = numbers.every((number) => {
+  return number > 3;
+});
+console.log(allLarge); // false (1, 2, and 3 are not > 3)js
+```
+
+### `reduce`
+
+- Basically `foldl`
+- There is a `reduceRight` which is essentially `foldr`
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, number) => {
+  return accumulator + number;
+}, 0); // 0 is the starting value
+
+console.log(sum); // 15 (0+1+2+3+4+5)
 ```
