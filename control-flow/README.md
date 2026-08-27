@@ -134,3 +134,53 @@ do {
 ### Exercise
 
 [recursion.js](./recursion.js)
+
+## Short Circuit Evaluation
+
+[Lesson Plan](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/control-flow/short-circuit-evaluation)
+
+### `&&` and `||`
+
+These behave as you expect.
+
+### Nullish Coalescing `??`
+
+- Only considers `null` and `undefined` as falsy:
+
+```js
+const config = {
+  timeout: 0, // We want to keep this 0!
+  debug: null, // This should get a default
+};
+
+// Using || (considers 0 as falsy)
+const timeout1 = config.timeout || 5000; // 5000 (❌)
+const debug = config.debug || true; // true (✅)
+
+// Using ?? (only considers null/undefined as falsy)
+const timeout2 = config.timeout ?? 5000; // 0 (✅)
+const debug = config.debug ?? true; // true (✅)
+```
+
+### Optional Chaining `?.`
+
+- Optional chaining will only access properties if the value before it is not `null` or `undefined`.
+
+```js
+const user = {
+  profile: {
+    settings: {
+      theme: "dark",
+    },
+  },
+};
+
+// Old way with &&
+const theme1 = user && user.profile && user.profile.settings && user.profile.settings.theme;
+
+// New way with optional chaining
+const theme2 = user?.profile?.settings?.theme;
+
+// Works with methods too
+user?.notify?.();
+```
