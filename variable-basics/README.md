@@ -15,11 +15,11 @@ The 3 built-in primitive types are `Number`, `String`, and `Boolean`.
 The `typeof` operator returns a string representing the name of the type.
 
 ```js
-typeof 42; // "number"
-typeof "Hello"; // "string"
-typeof true; // "boolean"
+typeof 42 // "number"
+typeof "Hello" // "string"
+typeof true // "boolean"
 
-typeof 1 == typeof 2; // true
+typeof 1 == typeof 2 // true
 ```
 
 ---
@@ -58,9 +58,9 @@ Use `let` when:
 Use upper-snake-case for global consts:
 
 ```js
-const APP_NAME = "My Awesome App";
-const VERSION = "1.0.0";
-const SUPPORT_EMAIL = "support@example.com";
+const APP_NAME = "My Awesome App"
+const VERSION = "1.0.0"
+const SUPPORT_EMAIL = "support@example.com"
 ```
 
 ---

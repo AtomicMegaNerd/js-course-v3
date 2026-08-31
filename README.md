@@ -4,7 +4,7 @@ This is a course from Masters.dev.
 
 [Course site](https://master.dev/courses/getting-started-javascript-v3).
 
-## Eearlier Web Dev Course
+## Earlier Web Dev Course
 
 There is some overlap with
 [https://github.com/AtomicMegaNerd/web-dev-intro](https://github.com/AtomicMegaNerd/web-dev-intro).

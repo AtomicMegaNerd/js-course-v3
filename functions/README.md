@@ -8,12 +8,12 @@ Nothing noteworthy here. He is initially using the function keyword here:
 
 ```js
 function add(x, y) {
-  return x + y;
+  return x + y
 }
 
-let sum = add(2, 3);
-console.log(sum); // 5
-console.log(add(10, 7)); // 17
+let sum = add(2, 3)
+console.log(sum) // 5
+console.log(add(10, 7)) // 17
 ```
 
 If you leave out an argument to a function it will be set to `undefined`.
@@ -31,15 +31,15 @@ _callback_:
 
 ```js
 function sumCallback(a, b, callback) {
-  let sum = a + b;
-  callback(sum); // Invoke the callback with the result
+  let sum = a + b
+  callback(sum) // Invoke the callback with the result
 }
 
 function handleSum(sum) {
-  console.log(sum);
+  console.log(sum)
 }
 
-sumCallback(1, 2, handleSum); // Prints: 3
+sumCallback(1, 2, handleSum) // Prints: 3
 ```
 
 ---
@@ -50,12 +50,12 @@ sumCallback(1, 2, handleSum); // Prints: 3
 
 ```js
 function sum(a, b) {
-  return a + b;
+  return a + b
 }
 
 const sumArrow = (a, b) => {
-  return a + b;
-};
+  return a + b
+}
 ```
 
 ### Differences
@@ -67,20 +67,20 @@ When you have _one_ parameter you can omit the parentheses:
 ```js
 // With parentheses
 const printName = (name) => {
-  console.log(name);
-};
+  console.log(name)
+}
 
 // Without parentheses
 const printNameShort = (name) => {
-  console.log(name);
-};
+  console.log(name)
+}
 ```
 
 #### Shorter Syntax for Simpler Functions
 
 ```js
 // Short arrow function (implicit return)
-const sumShort = (a, b) => a + b;
+const sumShort = (a, b) => a + b
 ```
 
 Do not add the `return` keyword to functions that use this syntax.

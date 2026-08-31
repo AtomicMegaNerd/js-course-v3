@@ -1,10 +1,10 @@
 function printGreeting(firstName, lastName, f) {
-  const fullName = `${firstName} ${lastName}`;
-  console.log(f(fullName));
+  const fullName = `${firstName} ${lastName}`
+  console.log(f(fullName))
 }
 
 function getGreeting(name) {
-  return `Hello ${name}`;
+  return `Hello ${name}`
 }
 
-printGreeting("Chris", "Dunphy", getGreeting);
+printGreeting("Chris", "Dunphy", getGreeting)

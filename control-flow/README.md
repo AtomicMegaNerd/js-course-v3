@@ -9,19 +9,19 @@
 Falsy values (treated as false):
 
 ```js
-false;
-0;
-(""); // (empty string)
-null;
-undefined;
-NaN;
+false
+0
+;("") // (empty string)
+null
+undefined
+NaN
 ```
 
 Truthy (everything else) including:
 
 ```js
-"0";
-[];
+"0"
+;[]
 // {}
 ```
 
@@ -34,7 +34,7 @@ See [if.js](./if.js)
 [Lesson Plan](https://webdevsimplified.github.io/fem-getting-started-with-javascript/lessons/control-flow/ternary-operator)
 
 ```js
-const message = age >= 18 ? "You can vote" : "You cannot vote";
+const message = age >= 18 ? "You can vote" : "You cannot vote"
 ```
 
 ### Exercise
@@ -50,20 +50,20 @@ See [ternary.js](./ternary.js)
 - Use `{ }` to create a new scope in each case.
 
 ```js
-const favoriteAnimal = "cat";
+const favoriteAnimal = "cat"
 
 switch (favoriteAnimal) {
   case "cat":
-    console.log("Cats are pretty cool");
-    break;
+    console.log("Cats are pretty cool")
+    break
   case "dog":
-    console.log("They are kinda loud");
-    break;
+    console.log("They are kinda loud")
+    break
   case "shark":
-    console.log("That is an interesting choice");
-    break;
+    console.log("That is an interesting choice")
+    break
   default:
-    console.log("That is cool but I am unfamiliar with that animal");
+    console.log("That is cool but I am unfamiliar with that animal")
 }
 ```
 
@@ -81,7 +81,7 @@ See [switch.js](./switch.js)
 
 ```js
 for (let i = 0; i < 5; i++) {
-  console.log(`Count: ${i}`);
+  console.log(`Count: ${i}`)
 }
 ```
 
@@ -89,7 +89,7 @@ for (let i = 0; i < 5; i++) {
 
 ```js
 for (const fruit of fruits) {
-  console.log(fruit);
+  console.log(fruit)
 }
 ```
 
@@ -100,10 +100,10 @@ const person = {
   name: "Kyle",
   age: 30,
   city: "New York",
-};
+}
 
 for (const key in person) {
-  console.log(`${key}: ${person[key]}`);
+  console.log(`${key}: ${person[key]}`)
 }
 ```
 
@@ -120,11 +120,11 @@ See [for.js](./for.js)
 Javascript has both `while` and `do...while`:
 
 ```js
-let userInput;
+let userInput
 do {
-  userInput = prompt("Enter 'yes' to continue:");
-  console.log(`You entered: ${userInput}`);
-} while (userInput !== "yes");
+  userInput = prompt("Enter 'yes' to continue:")
+  console.log(`You entered: ${userInput}`)
+} while (userInput !== "yes")
 ```
 
 ## Recursion
@@ -151,15 +151,15 @@ These behave as you expect.
 const config = {
   timeout: 0, // We want to keep this 0!
   debug: null, // This should get a default
-};
+}
 
 // Using || (considers 0 as falsy)
-const timeout1 = config.timeout || 5000; // 5000 (❌)
-const debug = config.debug || true; // true (✅)
+const timeout1 = config.timeout || 5000 // 5000 (❌)
+const debug = config.debug || true // true (✅)
 
 // Using ?? (only considers null/undefined as falsy)
-const timeout2 = config.timeout ?? 5000; // 0 (✅)
-const debug = config.debug ?? true; // true (✅)
+const timeout2 = config.timeout ?? 5000 // 0 (✅)
+const debug = config.debug ?? true // true (✅)
 ```
 
 ### Optional Chaining `?.`
@@ -174,16 +174,16 @@ const user = {
       theme: "dark",
     },
   },
-};
+}
 
 // Old way with &&
-const theme1 = user && user.profile && user.profile.settings && user.profile.settings.theme;
+const theme1 = user && user.profile && user.profile.settings && user.profile.settings.theme
 
 // New way with optional chaining
-const theme2 = user?.profile?.settings?.theme;
+const theme2 = user?.profile?.settings?.theme
 
 // Works with methods too
-user?.notify?.();
+user?.notify?.()
 ```
 
 ## Array Methods
@@ -193,21 +193,21 @@ user?.notify?.();
 ### `forEach`
 
 ```js
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 numbers.forEach((number) => {
-  console.log(number);
-});
+  console.log(number)
+})
 ```
 
 ### `forEach` with Index
 
 ```js
-const names = ["Kyle", "Sarah", "John"];
+const names = ["Kyle", "Sarah", "John"]
 
 names.forEach((name, index) => {
-  console.log(`${name} ${index}`);
-});
+  console.log(`${name} ${index}`)
+})
 ```
 
 ### `map`
@@ -215,14 +215,14 @@ names.forEach((name, index) => {
 - Returns new array with the result of the function applied to each element
 
 ```js
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 const doubled = numbers.map((number) => {
-  return number * 2;
-});
+  return number * 2
+})
 
-console.log(doubled); // [2, 4, 6, 8, 10]
-console.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)
+console.log(doubled) // [2, 4, 6, 8, 10]
+console.log(numbers) // [1, 2, 3, 4, 5] (original unchanged)
 ```
 
 ### `filter`
@@ -230,14 +230,14 @@ console.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)
 - Returns all matching elements matching the predicate
 
 ```js
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 const smallNumbers = numbers.filter((number) => {
-  return number <= 2;
-});
+  return number <= 2
+})
 
-console.log(smallNumbers); // [1, 2]
-console.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)
+console.log(smallNumbers) // [1, 2]
+console.log(numbers) // [1, 2, 3, 4, 5] (original unchanged)
 ```
 
 ### `find`
@@ -245,13 +245,13 @@ console.log(numbers); // [1, 2, 3, 4, 5] (original unchanged)
 - Returns the first element matching the predicate
 
 ```js
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 const firstBigNumber = numbers.find((number) => {
-  return number > 2;
-});
+  return number > 2
+})
 
-console.log(firstBigNumber); // 3 (not an array, just the number)
+console.log(firstBigNumber) // 3 (not an array, just the number)
 ```
 
 ### `some`
@@ -259,17 +259,17 @@ console.log(firstBigNumber); // 3 (not an array, just the number)
 - Returns true if at least one element matches the predicate
 
 ```js
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 const hasLargeNumber = numbers.some((number) => {
-  return number > 3;
-});
-console.log(hasLargeNumber); // true (because 4 and 5 are > 3)
+  return number > 3
+})
+console.log(hasLargeNumber) // true (because 4 and 5 are > 3)
 
 const hasNegativeNumber = numbers.some((number) => {
-  return number < 0;
-});
-console.log(hasNegativeNumber); // false (no numbers are < 0)
+  return number < 0
+})
+console.log(hasNegativeNumber) // false (no numbers are < 0)
 ```
 
 ### `every`
@@ -277,17 +277,17 @@ console.log(hasNegativeNumber); // false (no numbers are < 0)
 - Returns true if all elements match the predicate
 
 ```js
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 const allPositive = numbers.every((number) => {
-  return number > 0;
-});
-console.log(allPositive); // true (all numbers are greater than 0)
+  return number > 0
+})
+console.log(allPositive) // true (all numbers are greater than 0)
 
 const allLarge = numbers.every((number) => {
-  return number > 3;
-});
-console.log(allLarge); // false (1, 2, and 3 are not > 3)js
+  return number > 3
+})
+console.log(allLarge) // false (1, 2, and 3 are not > 3)js
 ```
 
 ### `reduce`
@@ -296,11 +296,11 @@ console.log(allLarge); // false (1, 2, and 3 are not > 3)js
 - There is a `reduceRight` which is essentially `foldr`
 
 ```js
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 const sum = numbers.reduce((accumulator, number) => {
-  return accumulator + number;
-}, 0); // 0 is the starting value
+  return accumulator + number
+}, 0) // 0 is the starting value
 
-console.log(sum); // 15 (0+1+2+3+4+5)
+console.log(sum) // 15 (0+1+2+3+4+5)
 ```

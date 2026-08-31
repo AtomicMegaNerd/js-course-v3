@@ -14,28 +14,28 @@
 #### Global Scope
 
 ```js
-const name = "Kyle"; // Global scope
+const name = "Kyle" // Global scope
 
 function sayHi() {
-  console.log(name); // ✅ Can access global variable
+  console.log(name) // ✅ Can access global variable
 }
 
-sayHi();
+sayHi()
 ```
 
 #### Block Scope
 
 ```js
 function myFunction() {
-  const x = 3; // New block scope
+  const x = 3 // New block scope
 }
 
 if (true) {
-  const x = 1; // New block scope
+  const x = 1 // New block scope
 }
 
 {
-  const x = 2; // New block scope
+  const x = 2 // New block scope
 }
 ```
 
@@ -64,28 +64,28 @@ if (true) {
 This does not work.
 
 ```js
-let a = 1;
-console.log(a);
+let a = 1
+console.log(a)
 ```
 
 This does not:
 
 ```js
-console.log(a);
-let a = 1;
+console.log(a)
+let a = 1
 ```
 
 But var declarations and functions can work before they are defined:
 
 ```js
-console.log(a);
-var a = 1;
+console.log(a)
+var a = 1
 ```
 
 ```js
-console.log(doFunc());
+console.log(doFunc())
 function doFunc() {
-  return "lol";
+  return "lol"
 }
 ```
 
@@ -97,21 +97,21 @@ Code organization. Main program logic at the top and helper functions n the bott
 
 ```js
 // Main program logic (easy to read)
-processUserData();
-displayResults();
-cleanup();
+processUserData()
+displayResults()
+cleanup()
 
 // Helper functions (implementation details)
 function processUserData() {
-  console.log("Processing...");
+  console.log("Processing...")
 }
 
 function displayResults() {
-  console.log("Displaying results...");
+  console.log("Displaying results...")
 }
 
 function cleanup() {
-  console.log("Cleaning up...");
+  console.log("Cleaning up...")
 }
 ```
 
@@ -125,14 +125,14 @@ What makes closures confusing is they access the _current value_ of variables, n
 had when the closure was created. so:
 
 ```js
-let a = 1;
+let a = 1
 
 function print() {
-  console.log(a);
+  console.log(a)
 }
 
-a = 2; // Change the value before calling the function
-print(); // Prints: 2 (not 1!)
+a = 2 // Change the value before calling the function
+print() // Prints: 2 (not 1!)
 ```
 
 Closures are often used to define functions inside of functions.
@@ -150,15 +150,15 @@ What does this do?
 // Outer returns the function inner. y is not yet bound.
 function outer(x) {
   function inner(y) {
-    console.log(x + y);
+    console.log(x + y)
   }
-  return inner;
+  return inner
 }
 
 // returns function inner(y) { 5 + y }
-const addFive = outer(5);
+const addFive = outer(5)
 // binds 3 to y giving us 8
-addFive(3);
+addFive(3)
 ```
 
 This isn't currying per-se but it feels similar. Understanding functional languages really helps

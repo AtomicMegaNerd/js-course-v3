@@ -1,5 +1,18 @@
 {
   // https://oxc.rs/docs/guide/usage/formatter/config.html
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "jsxSingleQuote": false,
+  "printWidth": 100,
+  "quoteProps": "as-needed",
+  "semi": false,
+  "singleAttributePerLine": false,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+
   "overrides": [
     {
       // oxfmt already defaults to 100, but let's be explicit for markdown

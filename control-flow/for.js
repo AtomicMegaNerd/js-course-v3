@@ -5,14 +5,14 @@ Write a for loop that:
  3. Finally, prints the array and the sum
 */
 
-const evenNums = [];
+const evenNums = []
 for (let i = 1; i <= 10; i++) {
-  evenNums.push(i * 2);
+  evenNums.push(i * 2)
 }
 
-let sum = 0;
+let sum = 0
 for (const evenNum of evenNums) {
-  sum += evenNum;
+  sum += evenNum
 }
 
-console.log(`First 10 even numbers: ${evenNums}, their sum: ${sum}`);
+console.log(`First 10 even numbers: ${evenNums}, their sum: ${sum}`)

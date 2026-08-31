@@ -1,7 +1,8 @@
 [tools]
 node = "latest"
 oxfmt = "latest"
-biome = "latest"
+tombi = "latest"
+oxlint = "latest"
 markdownlint-cli2 = "latest"
 pre-commit = "latest"
 
@@ -14,12 +15,12 @@ pre-commit = "latest"
 # The Rust based live-server is safer and faster
 "cargo:live-server" = "latest"
 
-[env]
-CURR_PROJECT = "./first-js-code/"
-
 [tools.rust]
 version = "stable"
 components = ["clippy", "rustfmt"]
+
+[env]
+CURR_PROJECT = "./first-js-code/"
 
 [tasks.serve]
 description = "Run live-server against $CURR_PROJECT"
@@ -56,4 +57,3 @@ repos:
 EOF
 pre-commit install
 """
-
